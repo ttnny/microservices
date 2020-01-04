@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"errors"
 	"fmt"
 	"github.com/ttnny/microservices-with-go/first_mvc/models"
+	"net/http"
 )
 
 // Dummy data
@@ -13,11 +13,15 @@ var (
 	}
 )
 
-func GetUser(userId uint64) (*models.User, error) {
+func GetUser(userId uint64) (*models.User, *models.Error) {
 	user := users[userId]
 	if user != nil {
 		return user, nil
 	}
 
-	return nil, errors.New(fmt.Sprintf("User %v is not found", userId))
+	return nil, &models.Error{
+		Message:    fmt.Sprintf("User %v is not found", userId),
+		StatusCode: http.StatusNotFound,
+		Code:       "not_found",
+	}
 }

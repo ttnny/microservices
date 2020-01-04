@@ -5,6 +5,6 @@ import (
 	"github.com/ttnny/microservices-with-go/first_mvc/repositories"
 )
 
-func GetUser(userId uint64) (*models.User, error) {
+func GetUser(userId uint64) (*models.User, *models.Error) {
 	return repositories.GetUser(userId)
 }

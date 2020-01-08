@@ -9,7 +9,9 @@ import (
 // Dummy data
 var (
 	users = map[uint64]*models.User{
-		123: {Id: 1, FirstName: "First", LastName: "Last", Email: "email@example.com"},
+		123: {Id: 1, FirstName: "First123", LastName: "Last123", Email: "email123@example.com"},
+		456: {Id: 1, FirstName: "First456", LastName: "Last456", Email: "email456@example.com"},
+		789: {Id: 1, FirstName: "First789", LastName: "Last789", Email: "email789@example.com"},
 	}
 )
 
